@@ -50,6 +50,25 @@ window.addEventListener('load', () => {
        list_el.appendChild(goal_el);
        input.value = "";
 
+       goal_edit_el.addEventListener('click', () => {
+       if(goal_edit_el.innerText.toLocaleLowerCase() == "edit"){
+        goal_input_el.removeAttribute("readonly");
+        goal_input_el.focus();
+        goal_edit_el.innerText = "Save";
+
+       }else{
+        goal_input_el.setAttribute("readonly","readonly");
+        goal_edit_el.innerText = "Edit";
+       }
+       });
+
+       goal_delete_el.addEventListener('click', () => {
+        list_el.removeChild(goal_el);
+
+
+
+       });
+
     })
 
 
